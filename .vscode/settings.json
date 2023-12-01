@@ -1,0 +1,8 @@
+{
+    "commentTranslate.targetLanguage": "vi",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.formatOnSave": true,
+    "eslint.workingDirectories": [
+        {"mode": "auto"}
+    ],
+}
