@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "start:host": "yarn workspace host run start",
+    "start:standalone:host": "yarn workspace host run start:standalone",
     "start:myvideo": "yarn workspace myvideo run start",
     "start:standalone:myvideo": "yarn workspace myvideo run start:standalone",
     "start:serngnm": "yarn workspace serngnm run start",

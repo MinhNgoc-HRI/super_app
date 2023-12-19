@@ -161,6 +161,15 @@ export default env => {
             /node_modules(.*[/\\])+abort-controller/,
             /node_modules(.*[/\\])+@callstack\/repack/,
             /node_modules(.*[/\\])+pmn-rn-component/,
+            /node_modules(.*[/\\])+react-freeze/,
+            /node_modules(.*[/\\])+@react-native-firebase\/app/,
+            /node_modules(.*[/\\])+@react-native-firebase\/analytics/,
+            /node_modules(.*[/\\])+@react-native-firebase\/crashlytics/,
+            /node_modules(.*[/\\])+@shopify\/react-native-skia/,
+            /node_modules(.*[/\\])+@shopify\/restyle/,
+            // /node_modules(.*[/\\])+react-native-reanimated-carousel/,
+            // /node_modules(.*[/\\])+react-native-svg/,
+            /node_modules(.*[/\\])+lottie-react-native/,
           ],
           use: 'babel-loader',
         },
@@ -195,10 +204,13 @@ export default env => {
          * ```
          */
         {
-          test: Repack.getAssetExtensionsRegExp(Repack.ASSET_EXTENSIONS),
+          test: Repack.getAssetExtensionsRegExp(
+            Repack.ASSET_EXTENSIONS.filter(ext => ext !== 'svg'),
+          ),
           use: {
             loader: '@callstack/repack/assets-loader',
             options: {
+              inline: true,
               platform,
               devServerEnabled: Boolean(devServer),
               /**
@@ -207,6 +219,10 @@ export default env => {
                * By default all images are scalable.
                */
               scalableAssetExtensions: Repack.SCALABLE_ASSETS,
+              // remote: {
+              //   enabled: true,
+              //   publicPath: 'http://localhost:3000',
+              // },
             },
           },
         },

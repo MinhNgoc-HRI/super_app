@@ -17,5 +17,11 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle")
         classpath("com.facebook.react:react-native-gradle-plugin")
+        // RN FIREBASE SETTING
+        classpath("com.google.gms:google-services:4.4.0")
+        // RN FIREBASE SETTING
+        // RN FIREBASE CRASH
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.9'
+        // RN FIREBASE CRASH
     }
 }

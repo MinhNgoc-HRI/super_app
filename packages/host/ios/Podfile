@@ -30,7 +30,10 @@ target 'host' do
 
   # Flags change depending on the env values.
   flags = get_default_flags()
-
+  # FIREBASE SETTING
+  use_frameworks! :linkage => :static
+  $RNFirebaseAsStaticFramework = true
+  # FIREBASE SETTING
   use_react_native!(
     :path => config[:reactNativePath],
     # Hermes is now enabled by default. Disable by setting this flag to false.
@@ -40,7 +43,7 @@ target 'host' do
     #
     # Note that if you have use_frameworks! enabled, Flipper will not work and
     # you should disable the next line.
-    :flipper_configuration => flipper_config,
+    # :flipper_configuration => flipper_config,
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
@@ -58,5 +61,15 @@ target 'host' do
       :mac_catalyst_enabled => false
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
+  end
+  # Repack fix issue install firebase
+  pre_install do |installer|
+    installer.pod_targets.each do |pod|
+      if pod.name.eql?('callstack-repack')
+        def pod.build_type
+          Pod::BuildType.static_library
+        end
+      end
+    end
   end
 end

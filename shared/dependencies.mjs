@@ -25,12 +25,27 @@ const deps = {
     "react-native-reanimated": {
       singleton: true,
       eager: true,
-      requiredVersion: "3.1.6",
+      requiredVersion: "3.6.1",
     },
     "react-native-gesture-handler": {
       singleton: true,
       eager: true,
       requiredVersion: "2.14.0",
+    },
+    "lottie-react-native": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^6.4.1"
+    },
+    "@shopify/react-native-skia": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^0.1.225",
+    },
+    "@shopify/restyle" : {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^2.4.2",
     },
     "pmn-rn-component": {
       singleton: true,
@@ -41,6 +56,81 @@ const deps = {
       singleton: true,
       eager: true,
       requiredVersion: "8.6.3",
+    },
+    "@react-navigation/bottom-tabs": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "next",
+    },
+    "@react-navigation/drawer": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "next",
+    },
+    "@react-navigation/material-top-tabs": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "next",
+    },
+    "@react-navigation/native": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "next",
+    },
+    "@react-navigation/native-stack": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "next",
+    },
+    "@react-navigation/stack": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "next",
+    },
+    "react-native-pager-view": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^6.2.3",
+    },
+    "react-native-safe-area-context": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^4.7.4",
+    },
+    "react-native-screens": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^3.27.0",
+    },
+    "@react-native-firebase/app": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^18.7.1",
+    },
+    "@react-native-firebase/messaging": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^18.7.1",
+    },
+    "@react-native-firebase/analytics": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^18.7.1",
+    },
+    "@react-native-firebase/crashlytics": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^18.7.1",
+    },
+    "react-native-reanimated-carousel": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^3.5.1",
+    },
+    "react-native-svg": {
+      singleton: true,
+      eager: true,
+      requiredVersion: "^14.1.0",
     }
   };
   
