@@ -11,11 +11,10 @@ const GAnimted = Animated.createAnimatedComponent(G);
 const SvgAnimted = Animated.createAnimatedComponent(Svg);
 export type IDarkLight = {
   size?: number;
-  useColorDarkMode?: boolean;
 };
 export type ODarkLight = {};
 const DarkLight = forwardRef<ODarkLight, IDarkLight>((props, ref) => {
-  const {size = 40, useColorDarkMode} = props;
+  const {size = 40} = props;
   const theme = useTheme();
   const isDarkMode = useSharedValue<boolean>(false);
 
@@ -59,7 +58,7 @@ const DarkLight = forwardRef<ODarkLight, IDarkLight>((props, ref) => {
       height={size}
       viewBox="0 0 24 24"
       fill="none"
-      stroke={useColorDarkMode ? theme.colors.mainForeground : '#FFF'}
+      stroke={theme.colors.text}
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -69,14 +68,14 @@ const DarkLight = forwardRef<ODarkLight, IDarkLight>((props, ref) => {
         <CircleAnimted animatedProps={maskedCircleProps} r="9" fill="black" />
       </Mask>
       <CircleAnimted
-        fill={useColorDarkMode ? theme.colors.mainForeground : '#FFF'}
+        fill={theme.colors.text}
         cx="12"
         cy="12"
         animatedProps={centerCircleProps}
         mask="url(#mask)"
       />
 
-      <GAnimted animatedProps={linesProps} fill={useColorDarkMode ? theme.colors.mainForeground : '#FFF'}>
+      <GAnimted animatedProps={linesProps} fill={theme.colors.text}>
         <Line x1="12" y1="1" x2="12" y2="3" />
         <Line x1="12" y1="21" x2="12" y2="23" />
         <Line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />

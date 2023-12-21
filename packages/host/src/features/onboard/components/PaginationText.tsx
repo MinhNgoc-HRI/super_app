@@ -26,13 +26,7 @@ export type IPaginationText = {
 export type OPaginationText = {};
 const PaginationText = forwardRef<OPaginationText, IPaginationText>(
   (props, _ref) => {
-    const {
-      index,
-      length,
-      animValue,
-      title = 'asdasdasd',
-      onPress = () => {},
-    } = props;
+    const {index, length, animValue, title = '', onPress = () => {}} = props;
     const theme = useTheme();
     const rootStyled = useAnimatedStyle(() => {
       let inputRange = [index - 1, index, index + 1];
@@ -59,7 +53,7 @@ const PaginationText = forwardRef<OPaginationText, IPaginationText>(
                 width={widthLize(48)}
                 height={widthLize(48)}
                 radius={100}
-                color={theme.colors.secondary}>
+                color={theme.colors.sub_primary}>
                 <ArrowRight color={theme.colors.primary} />
               </Box>
             </TouchSingle>
@@ -70,13 +64,13 @@ const PaginationText = forwardRef<OPaginationText, IPaginationText>(
         <Box middle center>
           <TouchRippleSingle onPress={onPress}>
             <Box
-              color={theme.colors.mainForeground}
+              color={theme.colors.text}
               padding={[widthLize(50), heightLize(12)]}
               radius={48}>
               <Text
                 size={fontSizeLine(16)}
                 weight="700"
-                color={theme.colors.mainBackground}>
+                color={theme.colors.main_bg}>
                 Bắt đầu
               </Text>
             </Box>
@@ -87,10 +81,10 @@ const PaginationText = forwardRef<OPaginationText, IPaginationText>(
       index,
       length,
       onPress,
-      theme.colors.mainBackground,
-      theme.colors.mainForeground,
+      theme.colors.main_bg,
       theme.colors.primary,
-      theme.colors.secondary,
+      theme.colors.sub_primary,
+      theme.colors.text,
     ]);
     return (
       <BoxAnimated position="absolute" style={rootStyled} left={0} right={0}>
@@ -98,7 +92,7 @@ const PaginationText = forwardRef<OPaginationText, IPaginationText>(
           size={fontSizeLine(20)}
           weight="bold"
           textAlign="center"
-          color={theme.colors.mainForeground}>
+          color={theme.colors.text}>
           {title}
         </Text>
         <Box height={heightLize(30)} />

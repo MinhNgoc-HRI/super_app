@@ -25,9 +25,7 @@ const BottomTabBar = forwardRef<OBottomTabBar, IBottomTabBar>((props, ref) => {
   useImperativeHandle(ref, () => ({}), []);
   const renderItem = useCallback(
     (name: string, isActive?: boolean) => {
-      const color = isActive
-        ? theme.colors.primary
-        : theme.colors.mainForeground;
+      const color = isActive ? theme.colors.primary : theme.colors.text;
       switch (name) {
         case routerBottom.HOME:
           return (
@@ -72,7 +70,7 @@ const BottomTabBar = forwardRef<OBottomTabBar, IBottomTabBar>((props, ref) => {
           return <Box />;
       }
     },
-    [theme.colors.mainForeground, theme.colors.primary],
+    [theme.colors.primary, theme.colors.text],
   );
   const onPress = useCallback(
     (
@@ -93,7 +91,7 @@ const BottomTabBar = forwardRef<OBottomTabBar, IBottomTabBar>((props, ref) => {
   return (
     <Box
       row
-      color={theme.colors.mainBackground}
+      color={theme.colors.main_bg}
       paddingBottom={insets.bottom}
       center
       justifyContent={'space-around'}>

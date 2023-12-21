@@ -52,7 +52,7 @@ const OnBoardScreen = forwardRef<OOnBoardScreen, IOnBoardScreen>(
     }, []);
 
     return (
-      <Box flex={1} color={theme.colors.mainBackground}>
+      <Box flex={1} color={theme.colors.main_bg}>
         <Box
           position="absolute"
           top={getOffset().top + 16}
@@ -82,7 +82,7 @@ const OnBoardScreen = forwardRef<OOnBoardScreen, IOnBoardScreen>(
             {DATA.map((_page, index) => (
               <PaginationItem
                 backgroundColor={theme.colors.primary}
-                inActiveBg={theme.colors.secondaryBackground}
+                inActiveBg={theme.colors.main_2_bg}
                 animValue={progressValue}
                 index={index}
                 key={index}

@@ -10,6 +10,7 @@ export type MainStackParamList = {
   LOGIN: undefined;
   OTP: undefined;
   DRAWER_STACK: NavigatorScreenParams<DrawerStackParamList> | undefined;
+  APP: undefined;
 };
 export type DrawerStackParamList = {
   BOTTOM_STACK: NavigatorScreenParams<BottomStackParamList> | undefined;

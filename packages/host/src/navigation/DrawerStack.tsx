@@ -17,7 +17,7 @@ import {
   TouchRippleSingle,
   widthLize,
 } from 'pmn-rn-component';
-import {ImageBackground, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {ColorSchemePressable} from '@src/providers/theme/ColorSchemePressable';
 import DarkLight from '@src/assets/svgs/DarkLight';
 import IconUserSquare from '@src/assets/svgs/UserSquare';
@@ -35,75 +35,71 @@ const DrawerStack = forwardRef<ODrawerStack, IDrawerStack>((_props, _ref) => {
         <Box
           flex={1}
           overflow={'hidden'}
-          style={[
-            styles.drawerContent,
-            {borderColor: theme.colors.secondaryBackground},
-          ]}>
-          <ImageBackground
-            source={require('../assets/images/banner.png')}
-            resizeMode={'cover'}>
-            <Box
-              height={heightLize(200)}
-              width={'100%'}
-              paddingTop={getOffset().top_without_margin}>
-              <Box padding={10}>
-                <Box row justifyContent={'space-between'} center>
-                  <IconUserSquare size={widthLize(30)} />
-                  <ColorSchemePressable
-                    onPress={() => refSvg?.current?.onChange()}>
-                    <DarkLight ref={refSvg} />
-                  </ColorSchemePressable>
-                </Box>
-                <Box height={20} />
-                <Box row>
-                  <TouchRippleSingle
-                    touchProps={{
-                      style: {
-                        borderRadius: 16,
-                        overflow: 'hidden',
-                        paddingVertical: 8,
-                        paddingHorizontal: 16,
-                        backgroundColor: '#F5F5F5',
-                      },
-                    }}>
-                    <Text
-                      textAlign={'center'}
-                      size={fontSizeLine(16)}
-                      weight={'bold'}
-                      color={'#040303'}>
-                      Đăng nhập
-                    </Text>
-                  </TouchRippleSingle>
-                  <Box width={10} />
-                  <TouchRippleSingle
-                    touchProps={{
-                      style: {
-                        borderRadius: 16,
-                        overflow: 'hidden',
-                        paddingVertical: 8,
-                        paddingHorizontal: 16,
-                        backgroundColor: '#040303',
-                      },
-                    }}>
-                    <Text
-                      textAlign={'center'}
-                      size={fontSizeLine(16)}
-                      weight={'bold'}
-                      color={'#F5F5F5'}>
-                      Đăng ký
-                    </Text>
-                  </TouchRippleSingle>
-                </Box>
+          style={[styles.drawerContent, {borderColor: theme.colors.main_2_bg}]}>
+          <Box
+            height={heightLize(200)}
+            width={'100%'}
+            borderBottomColor={theme.colors.main_2_bg}
+            borderBottomWidth={1}
+            paddingTop={getOffset().top_without_margin}>
+            <Box padding={10}>
+              <Box row justifyContent={'space-between'} center>
+                <IconUserSquare size={widthLize(30)} />
+                <ColorSchemePressable
+                  onPress={() => refSvg?.current?.onChange()}>
+                  <DarkLight ref={refSvg} />
+                </ColorSchemePressable>
+              </Box>
+              <Box height={20} />
+              <Box row>
+                <TouchRippleSingle
+                  touchProps={{
+                    style: {
+                      borderRadius: 16,
+                      overflow: 'hidden',
+                      paddingVertical: 8,
+                      paddingHorizontal: 16,
+                      backgroundColor: '#F5F5F5',
+                    },
+                  }}>
+                  <Text
+                    textAlign={'center'}
+                    size={fontSizeLine(16)}
+                    weight={'bold'}
+                    color={'#040303'}>
+                    Đăng nhập
+                  </Text>
+                </TouchRippleSingle>
+                <Box width={10} />
+                <TouchRippleSingle
+                  touchProps={{
+                    style: {
+                      borderRadius: 16,
+                      overflow: 'hidden',
+                      paddingVertical: 8,
+                      paddingHorizontal: 16,
+                      backgroundColor: '#040303',
+                    },
+                  }}>
+                  <Text
+                    textAlign={'center'}
+                    size={fontSizeLine(16)}
+                    weight={'bold'}
+                    color={'#F5F5F5'}>
+                    Đăng ký
+                  </Text>
+                </TouchRippleSingle>
               </Box>
             </Box>
-          </ImageBackground>
+          </Box>
+
           <DrawerContentScrollView {...props}>
             <Box height={50} />
           </DrawerContentScrollView>
         </Box>
       );
     },
-    [theme.colors.secondaryBackground],
+    [theme.colors.main_2_bg],
   );
   return (
     <Drawer.Navigator
@@ -111,7 +107,7 @@ const DrawerStack = forwardRef<ODrawerStack, IDrawerStack>((_props, _ref) => {
       screenOptions={{
         headerShown: false,
         swipeEnabled: false,
-        drawerActiveBackgroundColor: theme.colors.mainBackground,
+        drawerActiveBackgroundColor: theme.colors.main_bg,
         drawerActiveTintColor: 'transparent',
         drawerInactiveTintColor: 'transparent',
         drawerType: 'slide',
@@ -119,10 +115,10 @@ const DrawerStack = forwardRef<ODrawerStack, IDrawerStack>((_props, _ref) => {
         drawerStyle: {
           flex: 1,
           width: '70%',
-          backgroundColor: theme.colors.mainBackground,
+          backgroundColor: theme.colors.main_bg,
         },
         sceneContainerStyle: {
-          backgroundColor: theme.colors.mainBackground,
+          backgroundColor: theme.colors.main_bg,
         },
       }}
       drawerContent={DrawerContent}>

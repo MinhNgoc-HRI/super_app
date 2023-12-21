@@ -5,6 +5,7 @@ import OnboardScreen from '@src/features/onboard';
 import LoginScreen from '@src/features/login';
 import {MainStackParamList} from './types';
 import DrawerStack from './DrawerStack';
+import AppScreen from '@src/features/app';
 const Stack = createNativeStackNavigator<MainStackParamList>();
 const MainStack = () => {
   return (
@@ -20,6 +21,7 @@ const MainStack = () => {
       <Stack.Screen name={routerMain.ON_BOARD} component={OnboardScreen} />
       <Stack.Screen name={routerMain.LOGIN} component={LoginScreen} />
       <Stack.Screen name={routerMain.DRAWER_STACK} component={DrawerStack} />
+      <Stack.Screen name={routerMain.APP} component={AppScreen} />
     </Stack.Navigator>
   );
 };

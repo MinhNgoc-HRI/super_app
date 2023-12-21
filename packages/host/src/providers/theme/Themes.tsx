@@ -8,25 +8,37 @@ import {
 import type {ColorSchemeName} from './ColorSchemeContext';
 
 const palette = {
-  black: '#040303',
-  white: '#F5F5F5',
-  lightGray: 'rgba(0, 0, 0, 0.04)',
-  darkGray: '#3B3B3B',
-  lightPrimary: '#FF6E00',
-  // dartPrimary: '#994c00',
-  dartPrimary: '#FF6E00',
-  lightSecondary: '#FFF0E6',
-  dartSecondary: '#FFD9B3',
+  /**
+   * root color
+   */
+  dark_bg: '#0F0F0F',
+  light_bg: '#FFFFFF',
+  dark_2_bg: '#272727',
+  light_2_bg: '#F2F2F2',
+  dark_2_bg_hover: '#3F3F3F',
+  light_2_bg_hover: '#E5E5E5',
+  dark_text: '#F1F1F1',
+  light_text: '#0F0F0F',
+  dark_subtext: '#AAAAAA',
+  light_subtext: '#606060',
+  dark_red: '#C91908',
+  light_red: '#D22C25',
+  dark_blue: '#3EA6FF',
+  light_blue: '#055FD4',
 };
 
 export const theme = createTheme({
   colorScheme: 'light' as ColorSchemeName,
   colors: {
-    mainBackground: palette.white,
-    mainForeground: palette.black,
-    secondaryBackground: palette.lightGray,
-    primary: palette.lightPrimary,
-    secondary: palette.lightSecondary,
+    main_bg: palette.light_bg,
+    main_2_bg: palette.light_2_bg,
+    main_2_bg_hover: palette.light_2_bg_hover,
+    text: palette.light_text,
+    sub_text: palette.light_subtext,
+    red: palette.light_red,
+    blue: palette.light_blue,
+    primary: '#FF6E00',
+    sub_primary: '#FFF0E6',
   },
   spacing: {
     s: 8,
@@ -41,11 +53,15 @@ export const darkTheme: Theme = {
   colorScheme: 'dark',
   colors: {
     ...theme.colors,
-    mainBackground: palette.black,
-    mainForeground: palette.white,
-    secondaryBackground: palette.darkGray,
-    primary: palette.dartPrimary,
-    secondary: palette.dartSecondary,
+    main_bg: palette.dark_bg,
+    main_2_bg: palette.dark_2_bg,
+    main_2_bg_hover: palette.dark_2_bg_hover,
+    text: palette.dark_text,
+    sub_text: palette.dark_subtext,
+    red: palette.dark_red,
+    blue: palette.dark_blue,
+    primary: '#FF6E00',
+    sub_primary: '#FFF0E6',
   },
 };
 

@@ -13,6 +13,7 @@ export const routerMain: Entries<MainStackParamList> = {
   LOGIN: 'LOGIN',
   OTP: 'OTP',
   DRAWER_STACK: 'DRAWER_STACK',
+  APP: 'APP',
 };
 
 export const routerDrawer: Entries<DrawerStackParamList> = {

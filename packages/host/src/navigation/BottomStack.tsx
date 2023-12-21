@@ -52,7 +52,7 @@ const BottomStack = forwardRef<OBottomStack, IBottomStack>((_props, _ref) => {
     <BoxAnimted
       style={rootStyled}
       flex={1}
-      borderColor={theme.colors.secondaryBackground}>
+      borderColor={theme.colors.main_2_bg}>
       <Stack.Navigator
         initialRouteName={routerBottom.HOME}
         tabBar={TabBar}
